@@ -1,47 +1,5 @@
-(setq load-path (append '("/usr/share/emacs/site-lisp"
-                          "~/.emacs.d")
-                        load-path))
+(add-to-list 'load-path "~/.emacs.d/")
 
-(setq inhibit-startup-message t)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
-(coding-system-put 'utf-8 'category 'utf-8)
-(set-language-info
-"Japanese"
-'coding-priority (cons 'utf-8
-(get-language-info "Japanese" 'coding-priority)))
-(set-language-environment "Japanese")
-
-(add-hook 'shell-mode-hook
-          (function
-           (lambda ()
-             (set-buffer-process-coding-system 'utf-8 'utf-8))))
-
-
-;;フォント
-(set-default-font "Bitstream Vera Sans Mono")
-(set-fontset-font (frame-parameter nil 'font)
-                  'japanese-jisx0208
-                  '("IPA モナー UIゴシック" . "unicode-bmp"))
-
-
-;AtokX3 IIIMCF
-(setq load-path (cons "~/.emacs.d/iiimcf" load-path))
-(setq iiimcf-server-control-hostlist (list (concat "/tmp/.iiim-" (user-login-name) "/:0.0")))
-(setq iiimcf-server-control-default-language "ja")
-(setq iiimcf-server-control-default-input-method "atokx3")
-(require 'iiimcf-sc)
-(setq default-input-method 'iiim-server-control)
-
-
-;;
-;(load-library "anthy")
-;(set-input-method "japanese-anthy")
-;(setq default-input-method "japanese-anthy")
-
-;;
 ;===================================
 ; Wheel mouse
 ;===================================
@@ -55,11 +13,6 @@
 
 (set-scroll-bar-mode 'right)
 
-
-
-
-
-;;
 ;====================================
 ; Misc
 ;====================================
@@ -99,33 +52,15 @@
 
 
 (show-paren-mode 1)
-
-
 (tool-bar-mode 0)
-
-
 (setq backup-inhibited t)
-
-
 (setq delete-auto-save-files t)
-
-
-
-;;; 補完時に大文字小文字を区別しない
 (setq completion-ignore-case t)
-
-;;; 強力な補完機能を使う
-;;; p-bでprint-bufferとか
-;;(load "complete")
 (partial-completion-mode 1)
-
-;;; 補完可能なものを
-;;; 少しうるさい
 (icomplete-mode 1)
 
-
-
 ;;hown
+(setq load-path (cons "~/.emacs.d/howm-1.3.8" load-path))
 (setq howm-menu-lang 'ja)
 (global-set-key "\C-c,," 'howm-menu)
 (mapc
@@ -136,54 +71,51 @@
              howm-list-grep howm-create
              howm-keyword-to-kill-ring))
 
-;;; Rails
-(setq load-path (cons "~/.emacs.d/" load-path))
-
-    (autoload 'ruby-mode "ruby1.8-elisp/ruby-mode"
-      "Mode for editing ruby source files" t)
-    (setq auto-mode-alist
-          (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
-    (setq interpreter-mode-alist (append '(("ruby" . ruby-mode))
-                                     interpreter-mode-alist))
-
-    (autoload 'run-ruby "ruby1.8-elisp/inf-ruby"
-      "Run an inferior Ruby process")
-    (autoload 'inf-ruby-keys "inf-ruby"
-      "Set local key defs for inf-ruby in ruby-mode")
-    (add-hook 'ruby-mode-hook
-          '(lambda ()
-             (inf-ruby-keys)
-    ))
-(setq max-lisp-eval-depth 1000)
-(setq max-specpdl-size 3000)
-(setq load-path (cons "~/.emacs.d/emacs-rails" load-path))
-(require 'rails)
-(define-key rails-minor-mode-map "\C-c\C-p" 'rails-lib:run-primary-switch)
-(define-key rails-minor-mode-map "\C-c\C-n" 'rails-lib:run-secondary-switch)
-(setq auto-mode-alist  (cons '("\\.rhtml$" . html-mode) auto-mode-alist))
-(defun try-complete-abbrev (old)
-  (if (expand-abbrev) t nil))
-(setq hippie-expand-try-functions-list
-      '(try-complete-abbrev
-        try-complete-file-name
-        try-expand-dabbrev))
-(setq rails-use-mongrel t)
-
-(require 'autotest)
-
 ;ELScreen
-(load "elscreen" "ElScreen" t)
+;(load "elscreen" "ElScreen" t)
 
-;Shift+カーソルで分割したウィンドウを移動
-(windmove-default-keybindings)
+;;mode-compile
+(autoload 'mode-compile "mode-compile"
+  "Command to compile current buffer file based on the major mode" t)
+(global-set-key "\C-cc" 'mode-compile)
+(autoload 'mode-compile-kill "mode-compile"
+  "Command to kill a compilation launched by `mode-compile'" t)
+(global-set-key "\C-ck" 'mode-compile-kill)
 
-;;;
-;;; Twittering mode
-;;;
-(require 'twittering-mode)
-(setq twittering-username "hide.nba@gmail.com")
-(setq twittering-password "kabukiman")
-(twittering-scroll-mode t)
+;; ruby-electric
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
 
-(require 'auto-complete)
-(global-auto-complete-mode t)
+;; Interactively Do Things (highly recommended, but not strictly required)
+(require 'ido)
+(ido-mode t)
+
+;; Rinari
+(add-to-list 'load-path "~/.emacs.d/rinari")
+(require 'rinari)
+
+;; yasnippet
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet-0.6.1c")
+(require 'yasnippet) 
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
+
+;;rspec-mode
+(add-to-list 'load-path "~/.emacs.d/rspec-mode")
+(require 'rspec-mode)
+;specコマンドで起動する
+;(custom-set-variables '(rspec-use-rake-flag nil))
+;(custom-set-faces )
+
+;;auto-complete
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(ac-config-default)
+(setq ac-use-menu-map t)
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+
+;;
+(setq ns-command-modifier (quote meta))
+(setq ns-alternate-modifier (quote super))
