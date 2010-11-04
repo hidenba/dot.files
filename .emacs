@@ -30,7 +30,7 @@
                '(border-color . "black")
                '(mouse-color . "white")
                '(cursor-color . "white")
-               '(width . 170)
+               '(width . 250)
                '(height . 60)
                '(top . 0)
                '(left . 0)
@@ -119,3 +119,16 @@
 ;;
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote super))
+
+(require 'mercurial)
+
+;;haml-mode
+(add-to-list 'load-path "~/.emacs.d/haml-mode")
+(require 'haml-mode nil 't)
+(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
+;;sass-mode
+(add-to-list 'load-path "~/.emacs.d/sass-mode")
+(require 'sass-mode nil 't)
+(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
+
+(setq-default indent-tabs-mode nil) 

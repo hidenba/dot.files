@@ -28,8 +28,16 @@ alias rr="rm -rf"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+alias g="git"
+alias brails="bundle exec rails"
+alias brake="bundle exec rake"
+alias rsp="rake spec"
+alias rs="rails s"
+alias rc="rails c"
+alias be="bundle exec"
 
-alias la="ls -lhAF --color=auto"
+
+alias la="ls -lhAF"
 alias cl="make -f ~/Makefile clean"
 alias ps="ps -fU`whoami` --forest"
 alias amimo="cd ~/project/amimo/decoblog-beta/trunk/source/decoblog"
@@ -41,7 +49,9 @@ alias -g T='| tail'
 
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd -"$newdir"'
 
-#PROMPT="(´・ω・｀)つ "
 PROMPT="(｀〜´)ﾀﾘｰ "
 
 RPROMPT="[%~]"
+
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
