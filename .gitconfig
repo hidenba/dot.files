@@ -1,0 +1,13 @@
+[alias]
+	br = branch
+	ca = commit -v --amend
+	ci = commit -v
+	co = checkout
+	ds = diff --staged
+	lg = log --graph
+	lp = log -p --stat
+	pr = pull --rebase
+	st = status
+[user]
+	name = HIDEKUNI Kajita
+	email = hide.nba@gmail.com
