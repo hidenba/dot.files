@@ -34,13 +34,13 @@ alias brake="bundle exec rake"
 alias rsp="rake spec"
 alias rs="rails s"
 alias rc="rails c"
+alias rg="rails g"
+alias rd="rails dbconsole"
 alias be="bundle exec"
 
 
 alias la="ls -lhAF"
 alias cl="make -f ~/Makefile clean"
-alias ps="ps -fU`whoami` --forest"
-alias amimo="cd ~/project/amimo/decoblog-beta/trunk/source/decoblog"
 
 alias enw="emacs -nw"
 alias -g G='| grep'
