@@ -11,3 +11,7 @@
 [user]
 	name = HIDEKUNI Kajita
 	email = hide.nba@gmail.com
+[color]
+        ui = auto
+[core]
+	excludesfile = ~/.gitignore

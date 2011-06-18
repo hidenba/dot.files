@@ -1,0 +1,5 @@
+(global-set-key [mouse-4] 'scroll-down)
+(global-set-key [mouse-5] 'scroll-up)
+(mouse-wheel-mode)
+(global-set-key [mouse-5] '(lambda () (interactive) (scroll-up (/ (window-height) 2))))
+(global-set-key [mouse-4] '(lambda () (interactive) (scroll-down (/ (window-height) 2))))
