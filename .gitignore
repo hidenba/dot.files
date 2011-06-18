@@ -1,1 +1,11 @@
-.elc
+*.elc
+.emacs.d/ac-comphist.dat
+.emacs.d/ac-dict/
+.emacs.d/auto-save-list/
+.emacs.d/elisp/
+.emacs.d/elpa/
+.emacs.d/history
+.emacs.d/info/
+.emacs.d/plugins/
+.emacs.d/share/
+.emacs.d/url/
