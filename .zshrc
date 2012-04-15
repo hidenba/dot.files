@@ -32,17 +32,18 @@ alias g="git"
 alias brails="bundle exec rails"
 alias brake="bundle exec rake"
 alias rsp="rake spec"
-alias rs="rails s"
-alias rc="rails c"
-alias rg="rails g"
-alias rd="rails dbconsole"
+alias rs="bundle exec rails s"
+alias rc="bundle exec rails c"
+alias rg="bundle exec rails g"
+alias rd="bundle exec rails dbconsole"
 alias be="bundle exec"
+alias b="bundle install"
 
 
 alias la="ls -lhAF"
 alias cl="make -f ~/Makefile clean"
 
-alias enw="emacs -nw"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias -g G='| grep'
 alias -g L='| less'
 alias -g T='| tail'
@@ -53,5 +54,8 @@ PROMPT="(｀〜´)ﾀﾘｰ "
 
 RPROMPT="[%~]"
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
 
+eval "$(rbenv init -)"
+
+[[ -f ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
