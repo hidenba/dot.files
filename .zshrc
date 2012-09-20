@@ -78,10 +78,6 @@ alias -g T='| tail'
 
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd -"$newdir"'
 
-PROMPT="(｀〜´)ﾀﾘｰ "
-
-RPROMPT="[%~]"
-
 export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
 
 eval "$(rbenv init -)"
