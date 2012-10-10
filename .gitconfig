@@ -1,9 +1,12 @@
 [alias]
-	br = branch -a
+	bd = branch -d
+	bfd = branch -D
+	br = branch
+	ba = branch -a
 	bm = branch -a --merged
 	ca = commit -v --amend
 	ci = commit -v
-	cm = commit -v -am
+	cm = commit -vam
 	co = checkout
 	ds = diff --staged
 	lg = log --graph
