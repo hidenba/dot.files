@@ -1,14 +1,16 @@
 [alias]
+	br = branch
 	bd = branch -d
 	bfd = branch -D
-	br = branch
 	ba = branch -a
 	bm = branch -a --merged
 	ca = commit -v --amend
 	ci = commit -v
 	cm = commit -vam
 	co = checkout
+	cb = checkout -b
 	ds = diff --staged
+        lga = log --graph --all --color --pretty='%h %ci %cn %s %Cgreen%d%Creset'
 	lg = log --graph
 	lp = log -p --stat
 	pr = pull --rebase
@@ -23,3 +25,5 @@
         ui = auto
 [core]
 	excludesfile = ~/.gitignore
+        precomposeunicode = true
+        quotepath = true
