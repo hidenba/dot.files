@@ -2,3 +2,5 @@
 .elc
 tags
 .DS_Store
+doc
+.yardoc

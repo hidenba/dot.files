@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+ZSH_THEME="birara"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -38,6 +38,8 @@ source $ZSH/oh-my-zsh.sh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000000
 SAVEHIST=10000000
+
+REPORTTIME=10
 
 function history-all { history -E 1 } # 全履歴の一覧を出力する
 
@@ -82,7 +84,4 @@ export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
 
 eval "$(rbenv init -)"
 
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
-
+[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
