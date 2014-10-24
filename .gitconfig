@@ -13,17 +13,29 @@
         lga = log --graph --all --color --pretty='%h %ci %cn %s %Cgreen%d%Creset'
 	lg = log --graph
 	lp = log -p --stat
-	pr = pull --rebase
+	pr = pull --rebase --prune
         pp = pull --prune
 	st = status
         ap = add -p
         aa = add -A
+        rc = rebase --continue
 [user]
 	name = HIDEKUNI Kajita
 	email = hide.nba@gmail.com
 [color]
         ui = auto
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/hidenba/.gitignore
         precomposeunicode = true
-        quotepath = true
+        quotepath = off
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[push]
+        default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

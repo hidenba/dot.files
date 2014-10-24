@@ -29,7 +29,7 @@ ZSH_THEME="birara"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump brew ruby rbenv bundler rails3)
+plugins=(git autojump brew ruby rbenv bundler rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,6 +68,7 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 alias g="git"
+alias b="bundle"
 
 alias ps="ps aux"
 alias la="ls -lhAF"
@@ -82,6 +83,23 @@ alias gd='dirs -v; echo -n "select number: "; read newdir; cd -"$newdir"'
 
 export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
 
-eval "$(rbenv init -)"
-
 [[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# export RBENV_ROOT=/usr/local/opt/rbenv
+
+source ~/perl5/perlbrew/etc/bashrc
+export PATH=~/.cpanm:$PATH
+
+case "$TERM" in
+  dumb | emacs)
+    PROMPT="%m:%~> "
+    unsetopt zle
+    ;;
+esac
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
