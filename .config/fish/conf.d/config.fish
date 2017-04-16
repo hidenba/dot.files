@@ -14,4 +14,9 @@ function fish_user_key_bindings
     bind \cs peco_select_ghq_repository
     bind \cr peco_select_history
     bind \cx\ck peco_kill
+    bind \cx\cb hub_browse
+end
+
+function hub_browse
+    hub browse
 end

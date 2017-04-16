@@ -10,8 +10,10 @@
 .emacs.d/share/
 .emacs.d/url/
 .config/hub
-.config/fisherman
+.config/fisherman/
 .config/fish/completions/
-.config/fish/functions/
+.config/fish/functions/*
 .config/fish/fishd*
 .config/fish/conf.d/z.fish
+!.config/fish/functions/fish_prompt.fish
+!.config/fish/functions/fisher.fish
