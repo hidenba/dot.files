@@ -10,6 +10,7 @@
 .emacs.d/share/
 .emacs.d/url/
 .config/hub
+.config/direnv
 .config/fisherman/
 .config/fish/completions/
 .config/fish/functions/*

@@ -1,4 +1,5 @@
 rbenv init - | source
+eval (direnv hook fish)
 
 balias rr "rm -rf"
 balias rm "rm -i"
@@ -7,6 +8,9 @@ balias mv "mv -i"
 balias g "git"
 balias b "bundle"
 balias bi "bundle install"
+balias r "rails"
+balias rs "rails s"
+balias rc "rails c"
 
 set -x EDITOR '/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
 
