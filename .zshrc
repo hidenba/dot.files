@@ -45,31 +45,16 @@ alias d="docker-compose"
 
 alias ps="ps aux"
 alias la="ls -lhAF"
-alias cl="make -f ~/Makefile clean"
 
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias -g G='| grep'
 alias -g L='| less'
 alias -g T='| tail'
 
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd -"$newdir"'
 
-export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t'
+export EDITOR=='emacs'
 
-[[ -f `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# export RBENV_ROOT=/usr/local/opt/rbenv
-
-case "$TERM" in
-  dumb | emacs)
-    PROMPT="%m:%~> "
-    unsetopt zle
-    ;;
-esac
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
