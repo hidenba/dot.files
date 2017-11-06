@@ -51,6 +51,7 @@ alias -g L='| less'
 alias -g T='| tail'
 
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd -"$newdir"'
+alias emacs='emacs -nw'
 
 export EDITOR=='emacs'
 
@@ -58,3 +59,24 @@ if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
+export PATH="$HOME/.rbenv/shims:$PATH"
+
+function peco-select-history() {
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+    CURSOR=$#BUFFER
+    zle -R -c
+}
+zle -N peco-select-history
+bindkey '^R' peco-select-history
+
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
