@@ -33,3 +33,5 @@
 	smudge = git-media-smudge %f
 [push]
         default = simple
+[credential]
+	helper = cache --timeout=3600
