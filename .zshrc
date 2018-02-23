@@ -68,7 +68,7 @@ fi
 export PATH="$HOME/.rbenv/shims:$PATH"
 
 function peco-select-history() {
-    BUFFER="$(history -nr 1 | awk '!a[$0]++' | peco --query "$LBUFFER" | sed 's/\\n/\n/')"
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | LANG=ja_JP.UTF-8 peco --query "$LBUFFER" | sed 's/\\n/\n/')"
     CURSOR=$#BUFFER
     zle -R -c
 }
