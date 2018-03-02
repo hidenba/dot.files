@@ -47,6 +47,7 @@ alias docker-compose-app-solargraph="docker-compose run --rm app solargraph"
 alias de="docker-compose exec"
 alias dr="docker-compose run"
 alias d="docker-compose"
+alias peco="TERM=xterm peco"
 
 alias ps="ps aux"
 alias la="ls -lhAF"
@@ -85,5 +86,3 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-
-export TERM=xterm
