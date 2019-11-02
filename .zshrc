@@ -86,3 +86,6 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+GEM_EXE_DIR=`gem env | grep "EXECUTABLE DIRECTORY" | awk '{print $4}'`
+export PATH=$GEM_EXE_DIR:$PATH
