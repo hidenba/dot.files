@@ -1,0 +1,45 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 966,
+       "width": 1920,
+       "x": 3840,
+       "y": 78
+    },
+    "marks": [],
+    "name": "TweetDeck",
+    "percent": 0.33,
+    "swallows": [
+       {
+        "class": "^Google\\-chrome$",
+        "title": "^TweetDeck$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 966,
+       "width": 2874,
+       "x": 6723,
+       "y": 78
+    },
+    "marks": [],
+    "name": "Slack | covid-19 | ruby-jp",
+    "percent": 0.67,
+    "swallows": [
+       {
+        "class": "^Slack$",
+        "instance": "^slack$"
+       }
+    ],
+    "Type": "con"
+}
+
