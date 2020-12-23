@@ -183,9 +183,11 @@ bindsym $mod+Control+l exec xscreensaver-command -lock
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        output DP-0
+#        tray_output DP-0
+#        status_command i3status
+#}
 
 bindsym $mod+Shift+Ctrl+l exec xscreensaver-command -lock
 
@@ -197,3 +199,5 @@ exec google-chrome-stable -app=https://tweetdeck.twitter.com/
 exec slack
 exec google-chrome-stable
 exec ~/bin/xkeysnail.sh
+exec xscreensaver -nosplash
+exec_always --no-startup-id ~/.config/polybar/launch.sh
