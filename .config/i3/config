@@ -204,4 +204,3 @@ exec ~/bin/xkeysnail.sh
 exec xscreensaver -nosplash
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
-
