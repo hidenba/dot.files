@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 # bindcode $mod+40 exec rofi -modi drun,run -show drun
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -196,11 +196,13 @@ bindsym $mod+Shift+Ctrl+l exec xscreensaver-command -lock
 exec ~/.screenlayout/4k4kfhd.sh
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/ws3.layout.json'"
 exec --no-startup-id fcitx5
-exec feh --bg-scale ~/Pictures/wallpaper/UhiPF31-arch-linux-wallpaper.jpg
+exec_always feh --bg-scale ~/Pictures/wallpaper/wp5128919-cobra-kai-season-2-wallpapers.jpg
 exec google-chrome-stable -app=https://tweetdeck.twitter.com/
 exec slack
 exec google-chrome-stable
-exec ~/bin/xkeysnail.sh
-exec xscreensaver -nosplash
+exec_always ~/bin/xkeysnail.sh
+exec_always xscreensaver -nosplash
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec_always --no-startup-id flameshot
+exec albert
