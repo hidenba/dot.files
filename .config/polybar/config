@@ -276,7 +276,7 @@ label-separator-foreground = ${colors.foreground-alt}
 menu-0-0 = logout
 menu-0-0-exec = i3-msg exit
 menu-0-1 = reboot
-menu-0-1-exec = systemctl restart
+menu-0-1-exec = systemctl reboot -i
 menu-0-2 = power off
 menu-0-2-exec = systemctl poweroff
 
