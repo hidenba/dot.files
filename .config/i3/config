@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -153,7 +154,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut.' -b 'reboot' 'systemctl reboot' -b 'suspend' 'systemctl suspend' -b 'shutdown' 'systemctl poweroff' -B 'logout' 'i3-msg exit'"
 
-bindsym $mod+Shift+p exec xfce4-screenshooter
+bindsym $mod+Shift+p exec flameshot gui
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,7 +182,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+Control+l exec xscreensaver-command -lock
+bindsym $mod+Control+$alt+l exec xscreensaver-command -lock
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -190,8 +191,6 @@ bindsym $mod+Control+l exec xscreensaver-command -lock
 #        tray_output DP-0
 #        status_command i3status
 #}
-
-bindsym $mod+Shift+Ctrl+l exec xscreensaver-command -lock
 
 exec ~/.screenlayout/4k4kfhd.sh
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/ws3.layout.json'"
