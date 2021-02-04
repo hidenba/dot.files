@@ -119,9 +119,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace 1 output DP-4
-workspace 2 output DP-0
-workspace 3 output HDMI-0
+workspace 1 output DP-4 DVI-I-2-12
+workspace 2 output DP-0 DVI-I-1-1
+workspace 3 output HDMI-0 DP3
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -195,9 +195,10 @@ bindsym $mod+Control+$alt+l exec xscreensaver-command -lock
 exec ~/.screenlayout/4k4kfhd.sh
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/ws3.layout.json'"
 exec --no-startup-id fcitx5
-exec_always feh --bg-scale ~/Pictures/wallpaper/wp5128919-cobra-kai-season-2-wallpapers.jpg
+exec_always feh --bg-scale "/home/hidenba/Picture/wallpaper/i3_wallpaper"
 exec google-chrome-stable -app=https://tweetdeck.twitter.com/
 exec slack
+exec discord
 exec google-chrome-stable
 exec_always ~/bin/xkeysnail.sh
 exec_always xscreensaver -nosplash
