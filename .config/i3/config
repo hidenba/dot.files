@@ -195,7 +195,7 @@ bindsym $mod+Control+$alt+l exec xscreensaver-command -lock
 exec ~/.screenlayout/4k4kfhd.sh
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/ws3.layout.json'"
 exec --no-startup-id fcitx5
-exec_always feh --bg-scale "/home/hidenba/Picture/wallpaper/i3_wallpaper"
+exec_always feh --bg-scale "/home/hidenba/Pictures/wallpaper/i3_wallpaper"
 exec google-chrome-stable -app=https://tweetdeck.twitter.com/
 exec slack
 exec discord
