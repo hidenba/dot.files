@@ -64,6 +64,7 @@ export EDITOR=='emacs'
 
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 function peco-select-history() {
     BUFFER="$(history -nr 1 | awk '!a[$0]++' | LANG=ja_JP.UTF-8 peco --query "$LBUFFER" | sed 's/\\n/\n/')"
@@ -138,4 +139,3 @@ setopt prompt_subst
 RPROMPT='`rprompt-git-current-branch`'
 
 # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
