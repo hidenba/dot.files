@@ -206,4 +206,5 @@ exec_always xscreensaver -nosplash
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id flameshot
+exec_always --no-startup-id blueberry
 exec albert
