@@ -30,6 +30,7 @@ font pango:monospace 8
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec_always ~/.screenlayout/4k4kfhd.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -193,7 +194,6 @@ bindsym $mod+Control+$alt+l exec xscreensaver-command -lock
 #        status_command i3status
 #}
 
-exec ~/.screenlayout/4k4kfhd.sh
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/ws3.layout.json'"
 exec --no-startup-id fcitx5
 exec_always feh --bg-scale "/home/hidenba/Pictures/wallpaper/i3_wallpaper"
@@ -206,5 +206,5 @@ exec_always xscreensaver -nosplash
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id flameshot
-exec_always --no-startup-id blueberry
+exec_always --no-startup-id blueberry-tray
 exec albert
