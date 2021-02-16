@@ -31,6 +31,7 @@ font pango:monospace 8
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec_always ~/.screenlayout/4k4kfhd.sh
+exec_always pulseaudio -k && pulseaudio --start
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -199,7 +200,6 @@ exec --no-startup-id fcitx5
 exec_always feh --bg-scale "/home/hidenba/Pictures/wallpaper/i3_wallpaper"
 exec google-chrome-stable -app=https://tweetdeck.twitter.com/
 exec slack
-exec discord
 exec google-chrome-stable
 exec_always ~/bin/xkeysnail.sh
 exec_always xscreensaver -nosplash
@@ -208,3 +208,4 @@ exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id flameshot
 exec_always --no-startup-id blueberry-tray
 exec albert
+exec discord
