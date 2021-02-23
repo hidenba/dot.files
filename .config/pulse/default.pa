@@ -1,0 +1,4 @@
+.include /etc/pulse/default.pa
+
+load-module module-echo-cancel aec_args="analog_gain_control=0 digital_gain_control=0"
+
