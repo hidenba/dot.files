@@ -66,8 +66,6 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt"), {
     K("C-d"): [K("delete"), set_mark(False)],
     # Kill line
     K("C-k"): [K("Shift-end"), K("C-x"), set_mark(False)],
-    # Undo
-    K("C-slash"): [K("C-z"), set_mark(False)],
     # Cancel
     K("C-g"): [K("esc"), set_mark(False)],
 }, "Emacs-like keys")

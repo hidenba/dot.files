@@ -157,7 +157,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut.' -b 'reboot' 'systemctl reboot' -b 'suspend' 'systemctl suspend' -b 'shutdown' 'systemctl poweroff' -B 'logout' 'i3-msg exit'"
 
 bindsym $mod+Shift+p exec flameshot gui
-bindsym $mod+Shift+x exec /home/hidenba/bin/xkeysnail.sh
+bindsym $mod+Shift+x exec pulseaudio -k && pulseaudio --start
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

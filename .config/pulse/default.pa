@@ -1,4 +1,14 @@
 .include /etc/pulse/default.pa
 
-load-module module-echo-cancel aec_args="analog_gain_control=0 digital_gain_control=0"
+load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0\ digital_gain_control=1" source_name=nc_source sink_name=nc_sink
+update-source-proplist nc_source device.description="Microphone (NC)"
+update-sink-proplist nc_sink device.description="Headphones (NC)"
 
+set-default-source nc_source
+
+#load-module module-null-sink sink_name=mic_denoised_out rate=48000
+#load-module module-ladspa-sink sink_name=mic_raw_in sink_master=mic_denoised_out label=noise_suppressor_mono channels=1 plugin=/usr/lib/ladspa/librnnoise_ladspa.so control=50
+#load-module module-loopback source=alsa_input.usb-Generic_Blue_Microphones_201701110001-00.analog-stereo sink=mic_raw_in channels=1 source_dont_move=true sink_dont_move=true
+#load-module module-remap-source source_name=denoised master=mic_denoised_out.monitor channels=1
+#update-source-proplist denoised device.description="Microphone (RNNoise)"
+#set-default-source denoised
