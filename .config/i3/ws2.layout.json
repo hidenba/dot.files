@@ -1,0 +1,44 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2103,
+       "width": 1916,
+       "x": 3602,
+       "y": 20
+    },
+    "marks": [],
+    "name": "zsh - workspace (ワークスペース) - Visual Studio Code",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Code$",
+       "instance": "^code$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 2103,
+       "width": 1916,
+       "x": 1682,
+       "y": 20
+    },
+    "marks": [],
+    "name": "window manager - i3wm : start applications on specific workspaces when i3 starts - Unix & Linux Stack Exchange - Google Chrome",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Google\\-chrome$",
+       "instance": "^google\\-chrome$"
+       }
+    ],
+    "type": "con"
+}

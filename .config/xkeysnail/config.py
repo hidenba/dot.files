@@ -36,7 +36,7 @@ define_keymap(re.compile("Firefox|Google-chrome"), {
     # Ctrl+Alt+j/k to switch next/previous tab
     K("C-Shift-f"): K("C-TAB"),
     K("C-Shift-b"): K("C-Shift-TAB"),
-    K("C-s"): K("C-f"),
+    K("Super-f"): K("C-f"),
     # Type C-j to focus to the content
     K("C-j"): K("C-f6"),
 }, "Firefox and Chrome")

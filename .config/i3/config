@@ -31,7 +31,7 @@ font pango:monospace 8
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec_always ~/.screenlayout/4k4kfhd.sh
-exec_always pulseaudio -k && pulseaudio --start
+#exec_always pulseaudio -k && pulseaudio --start
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -88,7 +88,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -121,9 +121,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace 1 output DP-4 DVI-I-2-12
-workspace 2 output DP-0 DVI-I-1-1
-workspace 3 output HDMI-0 DP3
+workspace 1 output HDMI-0
+workspace 2 output DP-0
+workspace 3 output DP-2
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -195,17 +195,21 @@ bindsym $mod+Control+$alt+l exec xscreensaver-command -lock
 #        status_command i3status
 #}
 
+exec_always --no-startup-id autotiling
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/ws1.layout.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/ws2.layout.json'"
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/ws3.layout.json'"
 exec --no-startup-id fcitx5
 exec_always feh --bg-scale "/home/hidenba/Pictures/wallpaper/i3_wallpaper"
-exec google-chrome-stable -app=https://tweetdeck.twitter.com/
-exec slack
-exec google-chrome-stable
 exec_always ~/bin/xkeysnail.sh
 exec_always xscreensaver -nosplash
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec_always --no-startup-id flameshot
-exec_always --no-startup-id blueberry-tray
 exec albert
+exec google-chrome-stable -app=https://tweetdeck.twitter.com/
+exec slack
+exec code
+exec google-chrome-stable
+exec 1password --silent
 exec discord

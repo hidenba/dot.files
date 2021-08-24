@@ -1,9 +1,20 @@
 URxvt.visualBell:	true
 URxvt.saveLines:	3000
 
-URxvt.font:		xft:Fira Code-10,\
+URxvt.font:		xft:Fira Code-15,\
 			xft:Source Han Sans JP
 URxvt.depth: 32
+URxvt.perl-ext-common:	default,matcher,selection-to-clipboard,xim-onthespot, resize-font,
+
+URxvt.inputMethod: fcitx5
+URxvt.preeditType: OnTheSpot
+
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 
 ! special
 *.foreground:	#01fa54
