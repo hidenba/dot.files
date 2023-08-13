@@ -19,6 +19,7 @@
         ap = add -p
         aa = add -A
         rc = rebase --continue
+	pf = push --force-with-lease --force-if-includes
 [user]
 	name = HIDEKUNI Kajita
 	email = hide.nba@gmail.com
@@ -29,12 +30,11 @@
 	excludesfile = /Users/hidenba/.gitignore
         precomposeunicode = true
         quotepath = off
+	editor = code --wait
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [push]
         default = simple
-[credential]
-	helper = /usr/lib/git-core/git-credential-gnome-keyring
 [init]
 	defaultBranch = main
